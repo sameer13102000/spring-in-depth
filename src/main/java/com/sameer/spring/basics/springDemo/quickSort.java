@@ -1,5 +1,10 @@
 package com.sameer.spring.basics.springDemo;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
 public class quickSort implements sortAlgorithm{
     public int[] sort(int[] arr){
         // Call the recursive quicksort method
