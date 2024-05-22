@@ -1,9 +1,14 @@
 package com.sameer.spring.basics.springDemo;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class binarySearchImp {
 
+    //Dependency of the Bean
+    @Autowired
     private sortAlgorithm sortAlgo;
 
     public binarySearchImp(sortAlgorithm sortAlgo) {

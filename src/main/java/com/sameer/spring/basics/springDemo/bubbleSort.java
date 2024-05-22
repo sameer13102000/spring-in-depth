@@ -1,5 +1,8 @@
 package com.sameer.spring.basics.springDemo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class bubbleSort implements sortAlgorithm{
     public int[] sort(int[] numbers){
         int n = numbers.length;
