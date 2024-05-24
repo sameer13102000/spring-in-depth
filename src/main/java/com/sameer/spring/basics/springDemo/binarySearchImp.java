@@ -9,14 +9,16 @@ public class binarySearchImp {
 
     //Dependency of the Bean
     @Autowired
-    private sortAlgorithm sortAlgo;
+    private sortAlgorithm bubbleSort; // Changed the Autowiring process using Type as well as the name of the instances.
+    // This is done to reslove the conflicts when we have more than one Dependency and it is used as alternative of @Primary
 
-    public binarySearchImp(sortAlgorithm sortAlgo) {
-        this.sortAlgo = sortAlgo;
-    }
+//    public binarySearchImp(sortAlgorithm sortAlgo) {
+//        this.bubbleSort = bubbleSort;
+//    }
+    //No need of constructor to assign thr instance as this is named under AutoWired Spring handles it automatically.
 
     public int binarySearchAlgo(int[] arr, int search){
-        int[] numbers = sortAlgo.sort(arr);
+        int[] numbers = bubbleSort.sort(arr);
         int left = 0;
         int right = numbers.length - 1;
         while (left <= right) {
@@ -24,6 +26,7 @@ public class binarySearchImp {
 
             // Check if target is present at mid
             if (numbers[mid] == search) {
+                System.out.println(bubbleSort);
                 return (mid+1);
             }
 
