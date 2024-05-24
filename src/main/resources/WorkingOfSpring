@@ -16,7 +16,11 @@ No Setter or Constructor - Autowiring by type from bean name 'binarySearchImpl' 
 Finished creating instance of bean 'binarySearchImpl'
 
 
-
+Session 2
 Dyanmic case
 When there are multiple beans, Spring usually throws error as it does not understand which bean to consider for auto-wiring.
 So in such cases we need to give an priorty case mentioning as @Primary for the bean which you want to execute(Autowired).
+
+Session4
+Dynamic Case: In case of @Primary and Autowiring by Name. @Primary has the highest Priorty.
+The Spring will consider the @Priorty as the 1st preference and will execute it.
