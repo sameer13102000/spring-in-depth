@@ -15,12 +15,56 @@ No Setter or Constructor - Autowiring by type from bean name 'binarySearchImpl' 
 
 Finished creating instance of bean 'binarySearchImpl'
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Session 2
 Dyanmic case
 When there are multiple beans, Spring usually throws error as it does not understand which bean to consider for auto-wiring.
 So in such cases we need to give an priorty case mentioning as @Primary for the bean which you want to execute(Autowired).
 
-Session4
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Session 4
 Dynamic Case: In case of @Primary and Autowiring by Name. @Primary has the highest Priorty.
 The Spring will consider the @Priorty as the 1st preference and will execute it.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Session 5
+Dynamic Case: In case of Dynamic Autowiring. If one clear fav among the algorithm you have defined then using @Primary is recommended
+If you have more than one situation and you have to choice then you have to go with @Qualifer or Autowiring by Name.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Singleton Bean VS Prototype Bean
+
+In Java's Spring Framework, beans can have different scopes that define the lifecycle and visibility of these beans within the application context. The two common scopes are singleton and prototype. Here's an explanation of each:
+
+Singleton Bean -> Also known as Default Bean (one instance per spring context)
+Definition: A singleton bean is a single instance of the bean defined per Spring IoC container. This means that the same instance of the bean is shared and used across the entire Spring container.
+Lifecycle: The instance is created when the Spring container is initialized and is destroyed when the container is shut down.
+Usage: Singleton scope is the default scope in Spring. It is suitable for stateless beans or beans that are shared across multiple components.
+
+Prototype Bean -> (New bean whenever requested)
+Definition: A prototype bean creates a new instance of the bean every time it is requested from the Spring container. Each injection or request for this bean will result in a new instance.
+Lifecycle: The instance is created and initialized on each request, and it is not managed by the container after creation (i.e., the container does not track its lifecycle or handle its destruction).
+Usage: Prototype scope is useful for stateful beans or beans that need to be created with a new state for each use.
+
+Key Differences
+
+Instance Count:
+Singleton: One instance per Spring IoC container.
+Prototype: New instance every time it is requested.
+
+Lifecycle Management:
+Singleton: Managed entirely by the Spring container.
+Prototype: Only created and initialized by the Spring container; further lifecycle management (e.g., destruction) is not handled by Spring.
+
+Memory and Performance:
+Singleton: More memory efficient as only one instance exists.
+Prototype: Can lead to higher memory usage due to multiple instances but provides fresh state.
+
+Use Cases:
+Singleton: Suitable for stateless, shared beans, like services or DAOs.
+Prototype: Suitable for stateful, non-shared beans, like objects with session-specific state.

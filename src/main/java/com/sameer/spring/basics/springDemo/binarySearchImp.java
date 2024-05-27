@@ -2,14 +2,21 @@ package com.sameer.spring.basics.springDemo;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class binarySearchImp {
 
     //Dependency of the Bean
+
     @Autowired
-    private sortAlgorithm bubbleSort; // Changed the Autowiring process using Type as well as the name of the instances.
+    @Qualifier("quick")
+    private sortAlgorithm sortAlgorithm; // Changed the Autowiring process using Type as well as the name of the instances.
     // This is done to reslove the conflicts when we have more than one Dependency and it is used as alternative of @Primary
 
 //    public binarySearchImp(sortAlgorithm sortAlgo) {
@@ -18,7 +25,7 @@ public class binarySearchImp {
     //No need of constructor to assign thr instance as this is named under AutoWired Spring handles it automatically.
 
     public int binarySearchAlgo(int[] arr, int search){
-        int[] numbers = bubbleSort.sort(arr);
+        int[] numbers = sortAlgorithm.sort(arr);
         int left = 0;
         int right = numbers.length - 1;
         while (left <= right) {
@@ -26,7 +33,7 @@ public class binarySearchImp {
 
             // Check if target is present at mid
             if (numbers[mid] == search) {
-                System.out.println(bubbleSort);
+                System.out.println(sortAlgorithm);
                 return (mid+1);
             }
 
