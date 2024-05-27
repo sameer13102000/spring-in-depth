@@ -1,9 +1,11 @@
 package com.sameer.spring.basics.springDemo;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("quick")
 public class quickSort implements sortAlgorithm{
     public int[] sort(int[] arr){
         // Call the recursive quicksort method
