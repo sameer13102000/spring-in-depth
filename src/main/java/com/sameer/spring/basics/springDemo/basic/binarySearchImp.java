@@ -1,8 +1,7 @@
-package com.sameer.spring.basics.springDemo;
+package com.sameer.spring.basics.springDemo.basic;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -20,9 +19,9 @@ public class binarySearchImp {
     // This is done to reslove the conflicts when we have more than one Dependency and it is used as alternative of @Primary
 
 //    public binarySearchImp(sortAlgorithm sortAlgo) {
-//        this.bubbleSort = bubbleSort;
+//        this.sortAlgorithm = sortAlgo;
 //    }
-    //No need of constructor to assign thr instance as this is named under AutoWired Spring handles it automatically.
+    //No need of constructor to assign the instance as this is named under AutoWired Spring handles it automatically.
 
     public int binarySearchAlgo(int[] arr, int search){
         int[] numbers = sortAlgorithm.sort(arr);

@@ -1,4 +1,4 @@
-package com.sameer.spring.basics.springDemo;
+package com.sameer.spring.basics.springDemo.basic;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

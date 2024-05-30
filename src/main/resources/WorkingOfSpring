@@ -68,3 +68,11 @@ Prototype: Can lead to higher memory usage due to multiple instances but provide
 Use Cases:
 Singleton: Suitable for stateless, shared beans, like services or DAOs.
 Prototype: Suitable for stateful, non-shared beans, like objects with session-specific state.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Session 6
+
+Proxy (Mix of Prototype and Singleton)
+
+

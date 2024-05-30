@@ -1,15 +1,16 @@
 package com.sameer.spring.basics.springDemo;
 
+import com.sameer.spring.basics.springDemo.basic.binarySearchImp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class SpringDemoApplication {
+public class SpringDemoBasicApplication {
 
 	public static void main(String[] args) {
 		//binarySearchImp bsi = new binarySearchImp(new quickSort()); // Bean
-		ApplicationContext applicationContext = SpringApplication.run(SpringDemoApplication.class, args);
+		ApplicationContext applicationContext = SpringApplication.run(SpringDemoBasicApplication.class, args);
 		binarySearchImp bsi = applicationContext.getBean(binarySearchImp.class);
 		binarySearchImp bsi1 = applicationContext.getBean(binarySearchImp.class);
 		System.out.println(bsi);
