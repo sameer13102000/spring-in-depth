@@ -75,4 +75,9 @@ Session 6
 
 Proxy (Mix of Prototype and Singleton)
 
+ComponentScan: ComponentScan is used to help the spring to find the beans or the dependency in which package it is present.
+By default it searches within the same package. If we want to add the dependency which are outside of the current working package-
+- we need to add the @ComponentScan("path of the package") in the main class as mentioned in the SpringDemoComponentApplication.
+
+
 
