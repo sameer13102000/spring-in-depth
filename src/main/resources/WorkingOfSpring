@@ -79,5 +79,14 @@ ComponentScan: ComponentScan is used to help the spring to find the beans or the
 By default it searches within the same package. If we want to add the dependency which are outside of the current working package-
 - we need to add the @ComponentScan("path of the package") in the main class as mentioned in the SpringDemoComponentApplication.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Session 7
 
+@PostConstruct
+Spring calls the methods annotated with @PostConstruct only once, just after the initialization of bean properties. Keep in mind that these methods will run even if there’s nothing to initialize.
+The method annotated with @PostConstruct can have any access level, but it can’t be static.
+
+@PreDestroy
+A method annotated with @PreDestroy runs only once, just before Spring removes our bean from the application context.
+Same as with @PostConstruct, the methods annotated with @PreDestroy can have any access level, but can’t be static.
