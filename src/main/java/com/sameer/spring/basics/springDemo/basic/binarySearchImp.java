@@ -1,12 +1,12 @@
 package com.sameer.spring.basics.springDemo.basic;
 
 
-import jakarta.annotation.PostConstruct;
-
-import jakarta.annotation.PreDestroy;
-import org.slf4j.ILoggerFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import jakarta.annotation.PostConstruct;
+//
+//import jakarta.annotation.PreDestroy;
+//import org.slf4j.ILoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class binarySearchImp {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    //private Logger logger = LoggerFactory.getLogger(this.getClass());
     //Dependency of the Bean
 
     @Autowired
@@ -54,14 +54,14 @@ public class binarySearchImp {
         }
         return -1;
     }
-
-    @PostConstruct
-    public void postConstruct(){
-        logger.info("This is postConstruct Method, Which is called after initializing of bean");
-    }
-
-    @PreDestroy
-    public void preDestroy(){
-        logger.info("PreDestroy Method");
-    }
+//
+//    @PostConstruct
+//    public void postConstruct(){
+//        logger.info("This is postConstruct Method, Which is called after initializing of bean");
+//    }
+//
+//    @PreDestroy
+//    public void preDestroy(){
+//        logger.info("PreDestroy Method");
+//    }
 }
