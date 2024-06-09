@@ -90,3 +90,19 @@ The method annotated with @PostConstruct can have any access level, but it canâ€
 @PreDestroy
 A method annotated with @PreDestroy runs only once, just before Spring removes our bean from the application context.
 Same as with @PostConstruct, the methods annotated with @PreDestroy can have any access level, but canâ€™t be static.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Session 8 (Removing Spring boot)
+
+In this session we will learn how to use spring and not spring boot
+
+1. We have removed the dependency of spring boot and have used spring core and spring context dependency
+2. Once the dependency are removed we are not able to run the main spring class as this will error out saying ClassNotFoundException.
+3. So to resolve this we will add @Configuration. This will help us to run the main spring class.
+4. Once done if we run we get one more error saying ClassNotFoundException on the .run method inside main method, so we need to use new instance of ACAC(AnnotationConfigApplicationContext) class.
+5. When we run the code now we will still get one more exception saying no such bean found as the spring does not know where to find the bean.
+6. So to reslove this we will add @ComponentScan("path")(path is not mandetory if your beans are in the same package).
+7. Now we can run the code happily.
+(Please check the code for more info)
