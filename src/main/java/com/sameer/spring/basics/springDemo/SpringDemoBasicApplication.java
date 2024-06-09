@@ -14,17 +14,22 @@ public class SpringDemoBasicApplication {
 
 	public static void main(String[] args) {
 		//binarySearchImp bsi = new binarySearchImp(new quickSort()); // Bean
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringDemoBasicApplication.class); // To Initialize application context
-				//SpringApplication.run(SpringDemoBasicApplication.class, args);
 
-		binarySearchImp bsi = applicationContext.getBean(binarySearchImp.class);
-		binarySearchImp bsi1 = applicationContext.getBean(binarySearchImp.class);
-		System.out.println(bsi);
-		System.out.println(bsi1);
-		int answer = bsi.binarySearchAlgo(new int[] {1,2,3,5,6,4}, 4);
-		System.out.println();
-		System.out.println(applicationContext.getDisplayName());
-		System.out.println("The location of the Key element is " +answer);
+		// using try with resource to close the applicationContext instance. (GOOD PRACTISE)
+
+		try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringDemoBasicApplication.class)){
+			// To Initialize application context
+			//SpringApplication.run(SpringDemoBasicApplication.class, args);
+
+			binarySearchImp bsi = applicationContext.getBean(binarySearchImp.class);
+			binarySearchImp bsi1 = applicationContext.getBean(binarySearchImp.class);
+			System.out.println(bsi);
+			System.out.println(bsi1);
+			int answer = bsi.binarySearchAlgo(new int[] {1,2,3,5,6,4}, 4);
+			System.out.println();
+			System.out.println(applicationContext.getDisplayName());
+			System.out.println("The location of the Key element is " +answer);
+		};
 
 	}
 

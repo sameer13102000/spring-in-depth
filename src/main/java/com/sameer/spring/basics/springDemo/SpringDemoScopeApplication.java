@@ -19,18 +19,22 @@ public class SpringDemoScopeApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringDemoScopeApplication.class);
-				//SpringApplication.run(SpringDemoScopeApplication.class, args);
-		PersonDAO personDao = applicationContext.getBean(PersonDAO.class);
-		PersonDAO personDao2 = applicationContext.getBean(PersonDAO.class);
+		// using try with resource to close the applicationContext instance. (GOOD PRACTISE)
+
+		try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringDemoScopeApplication.class)){
+			//SpringApplication.run(SpringDemoScopeApplication.class, args);
+			PersonDAO personDao = applicationContext.getBean(PersonDAO.class);
+			PersonDAO personDao2 = applicationContext.getBean(PersonDAO.class);
 //		LOGGER.info("This is {}", personDao);
 //		LOGGER.info("{}", personDao.getJdbcConnection());
 //		LOGGER.info("That is {}", personDao2);
 //		LOGGER.info("{}", personDao.getJdbcConnection());
-		System.out.println(personDao); ;
-		System.out.println(personDao.getJdbcConnection());
-		System.out.println(personDao2);
-		System.out.println(personDao2.getClass());
+			System.out.println(personDao); ;
+			System.out.println(personDao.getJdbcConnection());
+			System.out.println(personDao2);
+			System.out.println(personDao2.getClass());
+		};
+
 	}
 
 }

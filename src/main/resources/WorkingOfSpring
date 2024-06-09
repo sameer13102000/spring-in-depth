@@ -105,4 +105,5 @@ In this session we will learn how to use spring and not spring boot
 5. When we run the code now we will still get one more exception saying no such bean found as the spring does not know where to find the bean.
 6. So to reslove this we will add @ComponentScan("path")(path is not mandetory if your beans are in the same package).
 7. Now we can run the code happily.
+8. Using try with resource to close the applicationContext instance. (GOOD PRACTISE)
 (Please check the code for more info)
