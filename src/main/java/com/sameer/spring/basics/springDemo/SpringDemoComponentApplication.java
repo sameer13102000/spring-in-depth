@@ -8,6 +8,7 @@ import com.sameer.spring.basics.springDemo.scope.PersonDAO;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,13 +21,17 @@ public class SpringDemoComponentApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringDemoComponentApplication.class);
-				//SpringApplication.run(SpringDemoComponentApplication.class, args);
-		componentDAO componentDaoInstance = applicationContext.getBean(componentDAO.class);
+		// using try with resource to close the applicationContext instance. (GOOD PRACTISE)
+
+		try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringDemoComponentApplication.class)){
+			//SpringApplication.run(SpringDemoComponentApplication.class, args);
+			componentDAO componentDaoInstance = applicationContext.getBean(componentDAO.class);
 //		LOGGER.info("This is {}", componentDaoInstance);
 //		LOGGER.info("{}", componentDaoInstance.getJdbcConnection());
-		System.out.println(componentDaoInstance);
-		System.out.println(componentDaoInstance.getJdbcConnection());
+			System.out.println(componentDaoInstance);
+			System.out.println(componentDaoInstance.getJdbcConnection());
+
+		};
 
 	}
 
