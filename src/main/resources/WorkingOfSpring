@@ -107,3 +107,24 @@ In this session we will learn how to use spring and not spring boot
 7. Now we can run the code happily.
 8. Using try with resource to close the applicationContext instance. (GOOD PRACTISE)
 (Please check the code for more info)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+BeanFactory VS ApplicationContext
+
+The BeanFactory and ApplicationContext are two different types of IoC containers in Spring Framework.
+The BeanFactory is a basic IoC container that provides basic features such as bean instantiation and dependency injection.
+The ApplicationContext is a more advanced IoC container that builds on top of the BeanFactory and provides additional features such as event publishing, messaging, and internationalization.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Stereotype Annotations
+
+Spring Framework provides us with some special annotations. These annotations are used to create Spring beans automatically in the application context. @Component annotation is the main Stereotype Annotation. There are some Stereotype meta-annotations which is derived from @Component those are
+
+@Service: We specify a class with @Service to indicate that they’re holding the business logic. Besides being used in the service layer, there isn’t any other special use for this annotation. The utility classes can be marked as Service classes.
+@Repository: We specify a class with @Repository to indicate that they’re dealing with CRUD operations, usually, it’s used with DAO (Data Access Object) or Repository implementations that deal with database tables.
+@Controller: We specify a class with @Controller to and responsible to indicate that a class serves as a controller, handle user requests and return the appropriate response. It is mostly used with REST Web Services.
+
+
+
