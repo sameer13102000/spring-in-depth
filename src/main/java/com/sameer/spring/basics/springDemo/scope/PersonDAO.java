@@ -13,7 +13,7 @@ public class PersonDAO {
         return jdbcConnection;
     }
 
-    public void setJdbcConnection(JdbcConnection jdbcConnection) {
-        this.jdbcConnection = jdbcConnection;
-    }
+//    public void setJdbcConnection(JdbcConnection jdbcConnection) {
+//        this.jdbcConnection = jdbcConnection;
+//    }
 }
