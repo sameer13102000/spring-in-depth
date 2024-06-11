@@ -127,4 +127,12 @@ Spring Framework provides us with some special annotations. These annotations ar
 @Controller: We specify a class with @Controller to and responsible to indicate that a class serves as a controller, handle user requests and return the appropriate response. It is mostly used with REST Web Services.
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Session 10
+
+How to read external URL or data from property files.
+
+Extra property sources can also be added to the Environment using @PropertySource. Properties — We can load properties files into a Properties instance, and then we can inject a specific property in a bean with the @Value("${property}") annotation.
+
+See code from SomeExternalURL.java and SpringDemoPropertyApplication.java
