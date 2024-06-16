@@ -16,4 +16,15 @@ public class PersonDAO {
 //    public void setJdbcConnection(JdbcConnection jdbcConnection) {
 //        this.jdbcConnection = jdbcConnection;
 //    }
+
+    public int getgreatestOfAll(){
+        int greatestValue = Integer.MIN_VALUE;
+        int[] data = jdbcConnection.fetchAll();
+        for(int value: data){
+            if(value > greatestValue)
+                greatestValue = value;
+        }
+        return greatestValue;
+    }
+
 }
