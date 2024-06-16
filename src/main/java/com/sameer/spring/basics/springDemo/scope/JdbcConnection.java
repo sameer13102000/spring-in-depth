@@ -11,5 +11,9 @@ public class JdbcConnection {
     public JdbcConnection(){
         System.out.println("This is the JDBC Connection");
     }
+
+    public int[] fetchAll(){
+        return new int[] {1,2,3,4};
+    }
 }
 
